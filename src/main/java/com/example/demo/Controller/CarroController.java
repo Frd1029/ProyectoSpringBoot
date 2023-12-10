@@ -3,6 +3,7 @@ package com.example.demo.Controller;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -63,7 +64,7 @@ public class CarroController {
         return null;
     }
 
-    
+    @DeleteMapping("/{id}")
     public Carro deleteCarroById(@PathVariable Integer id){
         Optional<Carro> carro = carroRepositorio.findById(id);
         if (carro.isPresent()) {
